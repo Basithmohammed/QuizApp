@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".win"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONGRATULATION"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="100dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Total Score"
+        android:text="Total Score : 10"
+        android:textColorHint="@color/white"
+        android:background="#50f000ff"
+        android:layout_gravity="center"
+        android:padding="13dp"
+        android:id="@+id/score"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8000ff"
+        android:text="RESTART"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:id="@+id/btn"
+        android:layout_marginTop="30dp"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gif5"
+        android:layout_marginTop="90dp"
+        />
+
+</LinearLayout>

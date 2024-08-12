@@ -1,0 +1,63 @@
+package com.example.exam;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class qus2 extends AppCompatActivity {
+
+    RadioButton ans1,ans2,ans3,ans4;
+    Button submit;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_qus2);
+
+
+        ans1=findViewById(R.id.ans1);
+        ans2=findViewById(R.id.ans2);
+        ans3=findViewById(R.id.ans3);
+        ans4=findViewById(R.id.ans4);
+
+        submit=findViewById(R.id.btn);
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            int score=2;
+            @Override
+            public void onClick(View view) {
+                String Value= checkanswer();
+                if (!Value.isEmpty()){
+                    score=score+2;
+                    Toast.makeText(qus2.this, "Right Answer! Score = "+score, Toast.LENGTH_SHORT).show();
+                    Intent i=new Intent(qus2.this,qus3.class);
+                    startActivity(i);
+                }else{
+                    Toast.makeText(qus2.this, "You are selected a wrong answer", Toast.LENGTH_SHORT).show();
+                    Intent i=new Intent(qus2.this,tryagain.class);
+                    startActivity(i);
+                }
+            }
+        });
+    }
+    private String checkanswer(){
+        String ans="";
+        if (ans3.isChecked()){
+            ans="7";
+        }else {
+            ans="";
+        }
+        return ans;
+    }
+
+    }
